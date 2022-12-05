@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
+        stage("checkout") {
             steps {
-                git 'https://github.com/RAHAMSHAIK007/terrarepo.git'
+                git "https://github.com/RAHAMSHAIK007/terrarepo.git"
             }
         }
         stage('terraform init') {
@@ -15,7 +15,7 @@ pipeline {
            stage('terraform Action') {
             steps {
                 echo "terraform action from the parameter is -- > ${action}"
-                sh ("terraform ${action} --auto-approve");
+                sh ("terraform ${action} --auto-approve")
             }
         }
     }
